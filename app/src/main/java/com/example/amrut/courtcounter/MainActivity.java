@@ -13,23 +13,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayForTeamA(8);
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+
     }
 
     public void displayForTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
+    public void displayForTeamB(int score) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
+        scoreView.setText(String.valueOf(score));
+    }
 
     public void addTwoForTeamA(View v) {
-        displayForTeamA(2);
+        scoreTeamA += 2;
+        displayForTeamA(scoreTeamA);
     }
 
     public void addThreeForTeamA(View v) {
-        displayForTeamA(3);
+        scoreTeamA += 3;
+        displayForTeamA(scoreTeamA);
     }
 
     public void addOneForTeamA(View v) {
-        displayForTeamA(1);
+        scoreTeamA += 1;
+        displayForTeamA(scoreTeamA);
+    }
+    public void addTwoForTeamB(View v) {
+        scoreTeamB += 2;
+        displayForTeamB(scoreTeamB);
+    }
+
+    public void addThreeForTeamB(View v) {
+        scoreTeamB += 3;
+        displayForTeamB(scoreTeamB);
+    }
+
+    public void addOneForTeamB(View v) {
+        scoreTeamB += 1;
+        displayForTeamB(scoreTeamB);
+    }
+    public void resetScore(View v) {
+        scoreTeamA =0;
+        scoreTeamB =0;
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
     }
 }
